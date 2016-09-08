@@ -1,0 +1,19 @@
+<ion-view view-title="Login" name="login-view">
+    <ion-pane class="padding">
+        <div class="logo">
+            <img src="img/smoke-logo.svg" alt="">
+        </div>
+        <div class="list">
+            <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="data.username">
+          </label>
+            <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="data.password">
+          </label>
+        </div>
+        <button class="button button-block primary-cta" ng-click="login()">Login</button>
+        <div class="item item-floating-label" ng-show="showError">
+            {{errorMsg}}
+        </div>
+    </ion-pane>
+</ion-view>
