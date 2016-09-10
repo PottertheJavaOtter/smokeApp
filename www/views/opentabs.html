@@ -1,0 +1,29 @@
+<ion-view view-title="Open Tabs">
+  <ion-content class="body">
+    <div id="currentEmployee"></div>
+    <div class="item item-input-inset">
+      <button class="button primary-cta ion-plus button-block" ng-click="openTabs.askForLocation()">
+        Open New Tab
+      </button>
+    </div>
+    <label class="item item-input item-floating-label">
+     <input id="searchtabs" ng-model="nameFilter.text" type="text" placeholder="Search Tabs">
+   </label>
+    <div class="item" type="item-text-wrap">
+      <div class="col col-20 tab-label">Tab ID:</div>
+      <div class="col col-40 tab-label">Location:</div>
+      <div class="col col-40 tab-label">Employee:</div>
+    </div>
+    <ul class="list">
+      <li class="item" ng-repeat="tab in openTabs.tabList | filter: nameFilter.text" type="item-text-wrap" ng-click="openTabs.routeToBill(tab)">
+        <div class="row">
+          <div class="col col-20">{{tab.id}}</div>
+          <div class="col col-40">{{tab.location}}</div>
+          <div class="col col-40">{{tab.name}}</div>
+        </div>
+      </li>
+    </ul>
+    </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

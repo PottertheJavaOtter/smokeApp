@@ -1,36 +1,24 @@
 angular
     .module('app')
     .config(router);
-        
+
 function router($stateProvider, $urlRouterProvider) {
     $stateProvider
-        // .state('tab', {
-        //     url: '/tab',
-        //     abstract: true,
-        //     templateUrl: 'views/tabs.html'
-        // })
-        // .state('tab.opentabs', {
-        //     url: '/opentabs',
-        //     views: {
-        //         'tab-opentabs': {
-        //             templateUrl: 'views/tab-opentabs.html',
-        //             controller: 'OpenTabCtrl'
-        //         }
-        //     }
-        // })
-        // .state('tab.opentab-bill', {
-        //     url: '/opentabs/:tabID',
-        //     views: {
-        //         'tab-opentabs': {
-        //             templateUrl: 'views/opentabs-bill.html',
-        //             controller: 'BillCtrl'
-        //         }
-        //     }
-        // })
+        .state('opentabs', {
+            url: '/opentabs',
+            templateUrl: 'views/opentabs.html',
+            controller: 'OpenTabsController as openTabs'
+        })
+        .state('bills', {
+            url: '/opentabs/:tabId',
+            templateUrl: 'views/opentabs-bill.html',
+            controller: 'BillController as bill'
+        })
         .state('login', {
             url: '/login',
             templateUrl: 'views/login.html',
-            controller: 'LoginCtrl'
+            controller: 'LoginController'
         })
     $urlRouterProvider.otherwise('login');
 };
+

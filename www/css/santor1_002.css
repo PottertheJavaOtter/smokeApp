@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'santor1_002';
+    src: url('fonts/santor1_002.eot');
+    src: url('fonts/santor1_002.eot') format('embedded-opentype'),
+         url('fonts/santor1_002.woff2') format('woff2'),
+         url('fonts/santor1_002.woff') format('woff'),
+         url('fonts/santor1_002.ttf') format('truetype'),
+         url('fonts/santor1_002.svg#santor1_002') format('svg');
+}
