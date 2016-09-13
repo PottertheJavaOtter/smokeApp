@@ -2,7 +2,8 @@ angular.module('app', [
   'ionic',
   'login',
   'openTabs',
-  'bills'
+  'createTab',
+  'bill'
   ])
   .run(main);
 

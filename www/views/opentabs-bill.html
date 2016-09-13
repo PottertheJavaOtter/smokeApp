@@ -2,14 +2,14 @@
   <ion-content class="body">
     <div>
       <div class="item item-input-inset">
-          <button class="button primary-cta ion-chevron-left" on-tap="go('/tab/opentabs')"> All Tabs</button>
+          <button class="button primary-cta ion-chevron-left" on-tap="bill.routeToOpenTabs()"> All Tabs</button>
           <div class="col col-15"></div>
           <div>
-            Employee {{bill.tabOwner}}'s Bill located at {{bill.tabLocation}} 
+            Employee {{bill.tabOwner}}'s Bill
           </div>
       </div>
       <label class="item item-input item-floating-label">
-          <input id="scaninput" type="text" ng-model="scanneditem" ng-enter="addItemToTab()" autofocus placeholder="Enter SKU"/>
+          <input id="scaninput" type="text" ng-model="scanneditem" ng-enter="bill.addItemToTab()" autofocus placeholder="Enter SKU"/>
       </label>
     </div>
     <ion-item class="item item-divider">
@@ -20,15 +20,15 @@
       </div>
     </ion-item>
     <ion-list can-swipe="true">
-      <ion-item ng-repeat="tabItem in tabItemList" ng-init='getCigarName(tabItem)' type="item-text-wrap">
+      <ion-item ng-repeat="tabItem in bill.tabItemList" ng-init='bill.getCigarName(tabItem)' type="item-text-wrap">
         <div class="row">
-          <div class="col col-15">{{bill.tabItem.quantity}}</div>
-          <div class="col col-60">{{bill.tabItem.name}}</div>
-          <div class="col col-25">${{bill.tabItem.finalamount}}</div>
+          <div class="col col-15">{{tabItem.quantity}}</div>
+          <div class="col col-60">{{tabItem.name}}</div>
+          <div class="col col-25">${{tabItem.finalamount}}</div>
         </div>
-        <ion-option-button class="button-assertive icon ion-trash-a" on-tap='voidItem(tabItem)'></ion-option-button>
-        <ion-option-button class="button-assertive ion-minus-circled" on-tap='removeQuantity(tabItem)'></ion-option-button>
-        <ion-option-button class="button-balanced ion-plus-circled" on-tap='addQuantityTabItem(tabItem)'></ion-option-button>
+        <ion-option-button class="button-assertive icon ion-trash-a" on-tap='bill.voidItem(tabItem)'></ion-option-button>
+        <ion-option-button class="button-assertive ion-minus-circled" on-tap='bill.removeQuantity(tabItem)'></ion-option-button>
+        <ion-option-button class="button-balanced ion-plus-circled" on-tap='bill.addQuantityTabItem(tabItem)'></ion-option-button>
       </ion-item>
     </ion-list>
   </ion-content>

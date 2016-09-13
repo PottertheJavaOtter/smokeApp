@@ -1,0 +1,19 @@
+<ion-view cache-view="false" view-title="Create Tab">
+    <ion-pane class="padding">
+        <div class="list">
+            <label class="item item-input">
+              <input type="text" placeholder="Seat Location" ng-model="createTab.seatLocation">
+            </label>
+            <label class="item item-input">
+                  <input type="text" placeholder="Payment Type" ng-model="createTab.paymentType">
+             </label>
+        </div>
+
+        <button class="button button-block primary-cta" ng-click="createTab.cancelNewTab()">Cancel</button>
+
+        <button class="button button-block primary-cta ion-plus button-block" ng-click="createTab.openNewTab()"> Open Tab</button>
+        <div class="item item-floating-label" ng-show="showError">
+            {{errorMsg}}
+        </div>
+    </ion-pane>
+</ion-view>

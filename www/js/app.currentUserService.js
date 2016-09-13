@@ -4,21 +4,21 @@ angular
 
 function currentUserService() {
 
-  var currentTabID = 0;
+  var currentTabId = 0;
   var currentEmployee = "";
-  var empName = "";
+  var employeeName = "";
   var seat = "";
   var card = "";
   var filter = "";
   var selectedItem = {};
-  var currentPW = "";
+  var currentPassword = "";
 
   return {
-    getCurrentTabID: function () {
-      return currentTabID;
+    getCurrentTabId: function () {
+      return currentTabId;
     },
-    setCurrentTabID: function (value) {
-      currentTabID = value;
+    setCurrentTabId: function (value) {
+      currentTabId = value;
     },
     getCurrentEmployee: function () {
       return currentEmployee;
@@ -26,11 +26,11 @@ function currentUserService() {
     setCurrentEmployee: function (value) {
       currentEmployee = value;
     },
-    getEmpName: function () {
-      return empName;
+    getEmployeeName: function () {
+      return employeeName;
     },
-    setEmpName: function (value) {
-      empName = value;
+    setEmployeeName: function (value) {
+      employeeName = value;
     },
     getLocation: function () {
       return seat;
@@ -56,11 +56,11 @@ function currentUserService() {
     setItem: function (value) {
       selectedItem = value;
     },
-    getCurrentPW: function () {
-      return currentPW;
+    getCurrentPassword: function () {
+      return currentPassword;
     },
-    setCurrentPW: function (value) {
-      currentPW = value;
+    setCurrentPassword: function (value) {
+      currentPassword = value;
     },
   };
 };

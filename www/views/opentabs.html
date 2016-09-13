@@ -1,8 +1,11 @@
-<ion-view view-title="Open Tabs">
+<ion-view cache-view="false" view-title="Open Tabs">
   <ion-content class="body">
     <div id="currentEmployee"></div>
-    <div class="item item-input-inset">
-      <button class="button primary-cta ion-plus button-block" ng-click="openTabs.askForLocation()">
+    <div>
+      <button class="button primary-cta ion-ios-unlocked-outline" ng-click="openTabs.logout()">
+        Logout
+      </button>
+      <button class="button primary-cta ion-plus button-block" ng-click="openTabs.openNewTab()">
         Open New Tab
       </button>
     </div>
@@ -10,7 +13,7 @@
      <input id="searchtabs" ng-model="nameFilter.text" type="text" placeholder="Search Tabs">
    </label>
     <div class="item" type="item-text-wrap">
-      <div class="col col-20 tab-label">Tab ID:</div>
+      <div class="col col-20 tab-label">Tab #:</div>
       <div class="col col-40 tab-label">Location:</div>
       <div class="col col-40 tab-label">Employee:</div>
     </div>
