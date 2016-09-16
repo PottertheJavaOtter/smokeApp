@@ -10,8 +10,8 @@ function LoginController($scope, $state, smokeApi, currentUserService) {
         smokeApi.getUserDetails($scope.data.password).success(function (response) {
             $scope.user = response;
             try {
-                if ($scope.user.firstname == $scope.data.username) {
-                    currentUserService.setEmployeeName($scope.data.username);
+                if ($scope.user.password == $scope.data.password) {
+                    currentUserService.setEmployeeName($scope.user.firstname);
                     currentUserService.setCurrentEmployee($scope.user.employeeid);
                     currentUserService.setCurrentPassword($scope.data.password);
                     $scope.data.username = "";
