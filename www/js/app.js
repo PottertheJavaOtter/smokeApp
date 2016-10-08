@@ -3,7 +3,8 @@ angular.module('app', [
   'login',
   'openTabs',
   'createTab',
-  'bill'
+  'bill',
+  'logger'
   ])
   .run(main);
 
